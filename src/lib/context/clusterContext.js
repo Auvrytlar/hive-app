@@ -69,7 +69,7 @@ export function ClusterProvider({ children }) {
 
   // It would be better to get a list as params so we get all records at once
   const getRecord = (targets) => {
-    console.log("getRecord: ", targets);
+    // console.log("getRecord: ", targets);
 
     targets.forEach(async (target) => {
       if (!exists(target)) {
@@ -96,7 +96,7 @@ export function ClusterProvider({ children }) {
     // console.log(records)
     // return ids.some((item) => records.some((record) => item == record._id));
     let exist = records.some((record) => id == record._id);
-    console.log("exists", id, exist);
+    // console.log("exists", id, exist);
     return exist;
   }
 

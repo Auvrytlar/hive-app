@@ -4,17 +4,23 @@ import { useEffect, useState } from "react";
 import { useCluster } from "@lib/context/clusterContext";
 import { NodeDetails } from "@components/NodeDetails";
 import ErrorPage from "next/error";
+import { useLocation } from "react-use";
 
-export default function Page({ params }) {
+export default function Page() {
   const [loading, setLoading] = useState(true);
   const { cluster } = useCluster();
   const [node, setNode] = useState(null);
   const [mySeparatedModules, setSeparatedModules] = useState(null);
 
+  // console.log(window.location.pathname);
+  // console.log(props.location);
+  const parts = useLocation().pathname.split("/");
+  const nodeid = parts[2];
+
   useEffect(() => {
     // Find node
-    if (cluster) {
-      let foundNode = cluster.find((a) => a._id == params.node);
+    if (cluster && nodeid) {
+      let foundNode = cluster.find((a) => a._id == nodeid);
       if (foundNode) {
         setNode(foundNode);
       } else setLoading(false);

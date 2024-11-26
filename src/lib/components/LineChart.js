@@ -36,7 +36,7 @@ const LineChart = ({
 
   // Callback to get records
   React.useEffect(() => {
-    console.log("Callback to get records");
+    // console.log("Callback to get records");
     if (!arrayOfModules || arrayOfModules.length == 0) return;
     if (ChartData?.length === arrayOfModules.length) return; // Don't continue if we have the data we need
 
@@ -53,7 +53,7 @@ const LineChart = ({
 
   // Convert records to ChartData
   React.useEffect(() => {
-    console.log("Convert records to ChartData");
+    // console.log("Convert records to ChartData");
     if (!arrayOfRecords) return;
     // Only use records from current arrayOfModules
     const thisChart = arrayOfRecords.filter((record) => arrayOfModules.some((module) => record._id == module._id));
@@ -82,7 +82,7 @@ const LineChart = ({
       };
       series.push(single);
     });
-    console.log(series);
+    // console.log(series);
     return series;
   }
 

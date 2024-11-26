@@ -9,7 +9,7 @@ export function MQTTObservations({ nodeID }) {
 
   // let node = "00:15:5d:ff:d3:0a";
   let node = nodeID.nHardwareUID;
-  console.log(node);
+  // console.log(node);
 
   useEffect(() => {
     setClient(getMQTTClient()); // Not needed?
@@ -47,8 +47,7 @@ export function MQTTObservations({ nodeID }) {
     ]);
   };
 
-  const toggleDebug = () => {
-  };
+  const toggleDebug = () => {};
   const [logs, setLogs] = useState(false);
   const toggleLogs = () => {
     if (client) {

@@ -1,13 +1,11 @@
 "use client";
-import { Inter } from "next/font/google";
-import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
+import Link from "next/link";
 
-import styles from ".././utils.module.css";
-import ".././globals.css";
+// import { Inter } from "next/font/google";
 import { MqttProvider } from "@lib/context/MqttContext";
 
-const inter = Inter({ subsets: ["latin"] }); // Font
+// const inter = Inter({ subsets: ["latin"] }); // Font
 
 // export const metadata = {
 //   title: "Create Next App",
@@ -16,13 +14,7 @@ const inter = Inter({ subsets: ["latin"] }); // Font
 
 export default function RootLayout({ children }) {
   const activeSegment = useSelectedLayoutSegment();
-  const links = [
-    { label: "Dev", path: "/mqttTests/dev", targetSegment: "dev" },
-    { label: "ChartTest", path: "/mqttTests/chartTest", targetSegment: "chart" },
-    { label: "TreeList", path: "/mqttTests/treeList", targetSegment: "tree" },
-    { label: "TreeWithChart", path: "/mqttTests/treeWithChart", targetSegment: "treeWithChart" },
-    { label: "HistoryTest", path: "/mqttTests/historyTest", targetSegment: "historyTest" },
-  ];
+  // const links = [{ label: "Dev", path: "/mqttTests/dev", targetSegment: "dev" }];
 
   return (
     <>
@@ -48,7 +40,7 @@ export default function RootLayout({ children }) {
         </ul>
         <nav>
           <ul>
-            {links.map((l, i) => {
+            {/* {links.map((l, i) => {
               return (
                 <li key={i}>
                   <Link href={l.path} className={activeSegment === l.targetSegment ? styles.activeSegment : styles.inactiveSegment}>
@@ -56,7 +48,7 @@ export default function RootLayout({ children }) {
                   </Link>
                 </li>
               );
-            })}
+            })} */}
           </ul>
         </nav>
         <div>{children}</div>

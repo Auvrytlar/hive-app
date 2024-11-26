@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { getMQTTClient } from "@lib/mqtt/controlTest";
-import styles from "../../page.module.css";
 // import useMqtt from "@lib/hooks/useMQTT";
 import { useMqtt } from "@lib/context/MqttContext";
 import { PrintObject } from "@components/temp/printObject";
@@ -16,38 +15,6 @@ export default function Home() {
     setMsg(note);
     console.log("got:", note);
   };
-
-  // useEffect(() => {
-  //   console.log("Connected changed", connected);
-  // }, [connected]);
-
-  // useEffect(() => {
-  //   // console.log(global._mqttClientPromise)
-
-  //   if (client) {
-  //     console.log(client);
-  //     client.subscribe("hive/debug");
-  //     // client.subscribe("hive/masters/00:15:5d:10:23:06/logs");
-
-  //     client.on("message", handleMessage);
-  //     client.on("connect", function () {
-  //       console.log("connect");
-  //       setConnected(true);
-  //     });
-  //     client.on("close", function () {
-  //       console.log("close");
-  //       setConnected(false);
-  //     });
-  //   }
-  //   return () => {
-  //     if (client) {
-  //       console.log("Removing");
-  //       client.unsubscribe("hive/debug");
-  //       client.removeListener("message", handleMessage);
-  //       // client.end();
-  //     }
-  //   };
-  // }, [client]);
 
   function MyButton({ value }) {
     function handleClick() {
@@ -75,7 +42,7 @@ export default function Home() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <h1>Push Control on Click!</h1>
         <div>
           <button onClick={() => mqttClient.reconnect()}>Connect</button>
@@ -104,7 +71,7 @@ export default function Home() {
             <PrintObject obj={mqttError} />
           </div>
         )}
-      </header>
+      </header> */}
     </div>
   );
 }

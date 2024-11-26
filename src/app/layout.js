@@ -2,8 +2,8 @@
 import { Inter } from "next/font/google";
 import { Sidebar } from "@components/sidebar";
 
-import styles from "./utils.module.css";
-import "./globals.css";
+import styles from "@app/utils.module.css";
+import "@app/globals.css";
 import "bootstrap/dist/css/bootstrap.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import { SessionProvider } from "next-auth/react";
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
     { label: "User", path: "/user/login", targetSegment: "user" },
     { label: "Home", path: "/", targetSegment: null },
     { label: "Cluster", path: "/cluster", targetSegment: "cluster" },
-    { label: "MQTT", path: "/mqttTests", targetSegment: "mqttTests" },
+    // { label: "MQTT", path: "/mqttTests", targetSegment: "mqttTests" },
   ];
 
   return (

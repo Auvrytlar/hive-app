@@ -2,10 +2,11 @@
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"],
+      "@app/*": ["./src/app/*"],
       "@lib/*": ["./src/lib/*"],
       "@components/*": ["./src/lib/components/*"],
-      "@hooks/*": ["./lib/hooks/*"],
-      "@context/*": ["./lib/context/*"]
+      "@hooks/*": ["./src/lib/hooks/*"],
+      "@context/*": ["./src/lib/context/*"]
     }
   }
 }

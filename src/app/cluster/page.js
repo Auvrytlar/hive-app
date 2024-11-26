@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       {cluster.map((a) => {
-        return <NodeCard node={a} />;
+        return <NodeCard node={a} key={a._id} />;
       })}
       <PrintObject obj={cluster} />
     </>

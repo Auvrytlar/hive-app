@@ -6,6 +6,7 @@ import NodeCard from "@/lib/components/nodeCard";
 
 export default function Home() {
   const { cluster } = useCluster();
+
   return (
     <>
       {cluster.map((a) => {
